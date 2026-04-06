@@ -1,3 +1,19 @@
+############################################################
+# Ban Phaeo CKD Dashboard
+#
+# Repository:
+# https://github.com/winkulvichit/CKD_dashboard
+#
+# Developed by:
+# Excellence Center for Critical Care Nephrology (EC-CCN)
+#
+# Data:
+# Local files are excluded from version control (.gitignore)
+#
+# License:
+# © 2026 EC-CCN. All rights reserved.
+############################################################
+
 library(shiny)
 library(dplyr)
 library(tidyr)
@@ -412,16 +428,24 @@ ui <- fluidPage(
   tags$hr(),
   
   tags$div(
-    style = "
+    style="
     text-align:center;
-    font-size:12px;
+    font-size:11px;
     color:#777;
-    margin-top:30px;
-    margin-bottom:10px;
+    margin-top:15px;
   ",
+    
+    tags$a(
+      href = "https://github.com/winkulvichit/CKD_dashboard",
+      "Source code on GitHub",
+      target = "_blank"
+    ),
+    
+    br(),
     
     HTML("&copy; 2026 EC-CCN. All rights reserved.")
   )
+  
 )
 
 # -----------------------------
@@ -496,12 +520,11 @@ server <- function(input, output, session) {
       ) +
       scale_fill_manual(values = c("New" = "#5DADE2", "Followed-up" = "#58D68D")) +
       labs(
-        title = "Numbers of new and followed-up participants by calendar year",
         x = NULL,
         y = "Number of unique participants",
         fill = NULL
       ) +
-      theme_minimal(base_size = 13) +
+      theme_minimal(base_size = 8) +
       theme(plot.title = element_text(face = "bold"))
 
     ggplotly(p, tooltip = "text")
@@ -577,7 +600,6 @@ server <- function(input, output, session) {
         drop = FALSE
       ) +
       labs(
-        title = "Trajectory of individual participants by calendar year",
         subtitle = paste0("Unique filtered participants: ", comma(nrow(wide))),
         x = NULL,
         y = "Percent of unique participants",
@@ -661,7 +683,6 @@ server <- function(input, output, session) {
       ) +
       expand_limits(y = max(tbl$n_participants, 0) * 1.16 + 1) +
       labs(
-        title = "Participants retained from selected starting year",
         subtitle = paste0(
           "Baseline = new participants entering in ", start_year,
           "; each later bar shows how many were retained in every consecutive year through that year"
@@ -1042,8 +1063,7 @@ server <- function(input, output, session) {
       geom_sf(aes(fill = fill_pct), color = "white", linewidth = 0.7) +
       geom_sf_text(
         aes(label = label_text),
-        size = 2.45,
-        fontface = "bold",
+        size = 2,
         lineheight = 0.95,
         color = "black",
         check_overlap = TRUE,
