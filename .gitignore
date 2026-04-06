@@ -1,0 +1,35 @@
+# R files
+.Rhistory
+.RData
+.Ruserdata
+.Rproj.user/
+*.Rproj
+
+# macOS
+.DS_Store
+
+# Shiny deployment
+rsconnect/
+
+# renv environment (if used)
+renv/library/
+renv/staging/
+
+# data files (sensitive)
+*.csv
+
+# shapefile components (if sensitive)
+*.shp
+*.shx
+*.dbf
+*.prj
+
+# version folders
+version/
+versions/
+archive/
+
+# temporary files
+*.log
+*.tmp
+*.bak
