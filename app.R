@@ -12,8 +12,8 @@ library(sf)
 library(leaflet)
 library(htmltools)
 
-DATA_PATH  <- "ALBP_long.csv"
-SHAPE_PATH <- "cualbumin_samutsakhon.shp"
+DATA_PATH  <- "data/ALBP_long.csv"
+SHAPE_PATH <- "shapefile/cualbumin_samutsakhon.shp"
 
 # -----------------------------
 # Helper functions

@@ -33,3 +33,16 @@ archive/
 *.log
 *.tmp
 *.bak
+
+.DS_Store
+data/
+*.csv
+*.xlsx
+*.shp
+*.shx
+*.dbf
+*.prj
+rsconnect/
+version/
+versions/
+archive/
