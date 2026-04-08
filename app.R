@@ -287,7 +287,7 @@ raw <- read_csv(DATA_PATH, show_col_types = FALSE) %>%
     analgesic_f = to_yes_no(analgesic, yes_values = c("1"), no_values = c("0"), na_as_no = TRUE),
     suppl_f = to_yes_no(suppl, yes_values = c("1"), no_values = c("0"), na_as_no = TRUE),
     albii_f = case_when(
-      as.character(albii) %in% c("Positive", "Negative") ~ as.character(albii),
+      as.character(albii) %in% c("Positive", "Negative", "Invalid") ~ as.character(albii),
       is.na(albii) | as.character(albii) == "" ~ NA_character_,
       TRUE ~ as.character(albii)
     ),
@@ -349,7 +349,7 @@ ui <- fluidPage(
       selectInput("herbalmed", "Herbal medicine", choices = c("All", "Yes", "No"), selected = "All"),
       selectInput("analgesic", "Analgesic", choices = c("All", "Yes", "No"), selected = "All"),
       selectInput("suppl", "Supplement", choices = c("All", "Yes", "No"), selected = "All"),
-      selectInput("albii", "Albii", choices = c("All", "Positive", "Negative"), selected = "All"),
+      selectInput("albii", "Albii", choices = c("All", "Positive", "Negative", "Invalid"), selected = "All"),
       hr(),
       selectInput(
         "map_metric",
