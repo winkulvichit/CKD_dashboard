@@ -10,12 +10,6 @@
 Clinical research dashboard for CKD cohort longitudinal analysis
 </p>
 
----
-
-Below is a clean, professional README suitable for an academic Shiny dashboard project.
-It is structured for clinical research, GitHub clarity, and future collaborators.
-
-You can copy–paste directly into README.md.
 
 ⸻
 
