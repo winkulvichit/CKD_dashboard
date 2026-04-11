@@ -12,7 +12,6 @@ Clinical research dashboard for CKD cohort longitudinal analysis
 
 
 https://ecccn-kcmh.shinyapps.io/ckd_dashboard/
-⸻
 
 CKD Participant Dashboard
 
